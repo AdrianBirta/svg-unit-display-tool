@@ -18,7 +18,7 @@ To run the application locally, follow these steps:
 
 2. **Navigate to the Project Directory**:
    ```bash
-   cd my-unit-display-tool
+   cd svg-unit-display-tool
 
 3. **Install Dependencies**:
    ```bash
