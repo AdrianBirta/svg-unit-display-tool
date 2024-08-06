@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+}
+
+.sidebar {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-right: 1px dashed #ccc;
+  margin-right: 10px;
+}
+
+.sidebar>button {
+  width: 100px;
+  align-self: center;
+  background-color: green;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
