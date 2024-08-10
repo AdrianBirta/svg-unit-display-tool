@@ -3,20 +3,26 @@ import FloorPlan from './components/FloorPlan';
 import Sidebar from './components/Sidebar';
 import './App.css';
 
-interface UnitData {
+interface Point {
   x: number;
   y: number;
-  width: number;
-  height: number;
-  label: string;
+}
+
+interface UnitData {
   id: number;
+  label: string;
   size: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+  points?: Point[]; // Array of points for polygons
 }
 
 const unitsData: UnitData[] = [
   { id: 1, label: 'Unit 1', x: 10, y: 20, width: 50, height: 50, size: '50m²' },
   { id: 2, label: 'Unit 2', x: 100, y: 100, width: 80, height: 80, size: '80m²' },
-  { id: 3, label: 'Unit 3', x: 230, y: 180, width: 100, height: 100, size: '100m²' },
+  { id: 3, label: 'Unit 3', points: [{ x: 230, y: 180 }, { x: 300, y: 200 }, { x: 260, y: 250 }], size: '100m²' },
 ];
 
 function App() {

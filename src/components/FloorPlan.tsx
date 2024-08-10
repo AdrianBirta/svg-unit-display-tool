@@ -2,19 +2,20 @@ import React from 'react';
 import Unit from './Unit';
 
 interface UnitData {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  label: string;
   id: number;
+  label: string;
   size: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+  points?: { x: number; y: number }[];
 }
 
 interface FloorPlanProps {
   units: UnitData[];
   onUnitClick: (unit: UnitData) => void;
-  selectedUnitId: number | null; // New prop to indicate selected unit
+  selectedUnitId: number | null;
 }
 
 const FloorPlan: React.FC<FloorPlanProps> = ({ units, onUnitClick, selectedUnitId }) => {
@@ -25,7 +26,7 @@ const FloorPlan: React.FC<FloorPlanProps> = ({ units, onUnitClick, selectedUnitI
           key={unit.id}
           unit={unit}
           onClick={() => onUnitClick(unit)}
-          selected={unit.id === selectedUnitId} // Pass selection status
+          selected={unit.id === selectedUnitId}
         />
       ))}
     </svg>
