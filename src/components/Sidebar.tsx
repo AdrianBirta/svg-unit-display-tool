@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ unit, logData }) => {
           <ul>
             {unit.points.map((point, index) => (
               <li key={index}>
-                Point {index + 1}: ({point.x}, {point.y})
+                Point {index + 1}: ({point.x.toFixed(2)}, {point.y.toFixed(2)})
               </li>
             ))}
           </ul>
@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ unit, logData }) => {
       );
     } else {
       // If the unit is a rectangle, display its top-left corner
-      return <p>Coordinates: ({unit.x}, {unit.y})</p>;
+      return <p>Coordinates: ({unit.x?.toFixed(2)}, {unit.y?.toFixed(2)})</p>;
     }
   };
 
