@@ -1,4 +1,4 @@
-# Unit Display Tool
+# SVG Unit Display Tool
 
 This is a simple web application designed to display unit information on a floor plan. The application is built using React with TypeScript and Vite as the build tool.
 
@@ -18,7 +18,7 @@ To run the application locally, follow these steps:
 
 2. **Navigate to the Project Directory**:
    ```bash
-   cd my-unit-display-tool
+   cd svg-unit-display-tool
 
 3. **Install Dependencies**:
    ```bash
