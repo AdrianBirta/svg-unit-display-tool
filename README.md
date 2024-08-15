@@ -1,12 +1,16 @@
 # SVG Unit Display Tool
 
+![SVG Unit Display Tool](./src/assets/svg-article-pic.png)
+
 This is a simple web application designed to display unit information on a floor plan. The application is built using React with TypeScript and Vite as the build tool.
 
 ## Features
 
 - **Floor Plan Display**: Shows a floor plan with multiple units represented as colored rectangles.
 - **Unit Selection**: Click on a unit to view its details in a sidebar. Clicking on an already selected unit will deselect it.
-- **Data Logging**: Includes a button to log the current unit data to the console.
+- **Drawing Mode**: Allows users to draw new units on the floor plan as either polygons or circles.
+- **Interactive Unit Creation**: Users can click to create polygon points or drag to create circles on the floor plan.
+- **Unit Deletion**: Users can delete a selected unit directly from the sidebar.
 
 ## Getting Started
 
@@ -34,7 +38,12 @@ Open your browser and navigate to http://localhost:5173 to see the application i
 
 ## Code Explanation
 
-- **App.tsx**: Manages the state of the selected unit and handles clicks on units. Passes necessary props to the FloorPlan and Sidebar components.
-- **FloorPlan.tsx**: Renders the SVG floor plan and units. Passes the selected unit state to each Unit component to apply the correct styling.
-- **Unit.tsx**: Represents individual units within the SVG. Changes color based on selection status.
-- **Sidebar.tsx**: Displays details of the currently selected unit.
+- **App.tsx**: Manages the state of the units, including creating, selecting, and deleting them. It also handles the interaction between the `FloorPlan.tsx` and `Sidebar.tsx` components.
+- **FloorPlan.tsx**: Renders the SVG floor plan, including the existing units and any new shapes being drawn. Handles user interactions like clicking to create points or dragging to create circles.
+- **Unit.tsx**: A wrapper component that decides whether to render a `PolygonUnit.tsx` or `CircleUnit.tsx` based on the type of the unit.
+- **PolygonUnit.tsx**: Represents individual polygon units within the SVG, allowing for rendering and user interaction.
+- **CircleUnit.tsx**: Represents individual circle units within the SVG, allowing for rendering and user interaction.
+- **Sidebar.tsx**: Displays details of the currently selected unit, provides controls for toggling between selection and drawing modes, and allows deletion of units.
+- **DrawControl.tsx**: Provides UI controls for switching between selection mode and the different drawing modes (polygon or circle).
+- **interfaces.ts**: Defines the TypeScript interfaces used across the application for strong typing.
+- **typeGuards.ts**: Contains type guard functions to differentiate between polygon and circle units.
