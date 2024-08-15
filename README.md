@@ -1,6 +1,6 @@
 # SVG Unit Display Tool
 
-![SVG Unit Display Tool](./src/assets/svg-article-pic.png)
+![SVG Unit Display Tool](./src/assets/svg-article-pic-2.png)
 
 This is a simple web application designed to display unit information on a floor plan. The application is built using React with TypeScript and Vite as the build tool.
 
